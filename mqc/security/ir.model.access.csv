@@ -41,6 +41,8 @@ access_mqc_user_admin,name_mqc_user_admin,model_mqc_user,group_mqc_user_admin,1,
 
 access_mqc_icu_user,name_mqc_icu_user,model_mqc_icu,group_mqc_icu_user,1,1,1,1
 
+access_mqc_lab_user,name_mqc_lab_user,model_mqc_lab,group_mqc_lab_user,1,1,1,1
+
 access_mqc_infect_user,name_mqc_infect_user,model_mqc_infect,group_mqc_infect_user,1,1,1,1
 access_mqc_infect_part_user,name_mqc_infect_part,model_mqc_infect_part,group_mqc_infect_user,1,1,1,1
 access_mqc_infect_device_user,name_mqc_infect_device,model_mqc_infect_device,group_mqc_infect_user,1,1,1,1
