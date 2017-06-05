@@ -1,0 +1,88 @@
+<odoo>
+    <data>
+
+        <record model="ir.actions.act_window" id="action_mqc_lab">
+            <field name="name">检验质控指标</field>
+            <field name="res_model">mqc.lab</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!-- lab form -->
+        <record id="view_emrg_form" model="ir.ui.view">
+            <field name="name">mqc.lab.form</field>
+            <field name="model">mqc.lab</field>
+            <field name="arch" type="xml">
+                <form copy="false" create="false" edit="true">
+                    <sheet>
+                        <group>
+                            <field name="year_month" attrs="{'readonly': True}" class="oe_inline" string="上报月份"/>
+                        </group>
+                        <notebook colspan="1">
+                            <page string="指标填写">
+                                <group>
+                                    <field name="bblxcwl" class="oe_inline"/>
+                                    <field name="bbrqcwl" class="oe_inline"/>
+                                    <field name="bbcjlcwl" class="oe_inline"/>
+                                    <field name="xpyfal" class="oe_inline"/>
+                                    <field name="knbbnjl" class="oe_inline"/>
+                                    <field name="jqyzzsjzws" class="oe_inline"/>
+
+                                    <field name="snzkxmkzl" class="oe_inline"/>
+                                    <field name="snzkxmbyxsbhgl" class="oe_inline"/>
+                                    <field name="snzpxmcjl" class="oe_inline"/>
+                                    <field name="snzpxmbhgl" class="oe_inline"/>
+                                    <field name="sysjbdl" class="oe_inline"/>
+                                    <field name="sysnzzsjzws" class="oe_inline"/>
+                                    <field name="jybgcwl" class="oe_inline"/>
+                                    <field name="wjztbl" class="oe_inline"/>
+                                    <field name="wjztbjsl" class="oe_inline"/>
+                                </group>
+                            </page>
+                        </notebook>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- 表格视图 -->
+        <record id="view_mqc_lab_tree" model="ir.ui.view">
+            <field name="name">mqc.lab.tree</field>
+            <field name="model">mqc.lab</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="year_month"/>
+                    <field name="units_name"/>
+                    <field name="bblxcwl"/>
+                    <field name="bbrqcwl"/>
+                    <field name="xpyfal"/>
+                    <field name="knbbnjl"/>
+                    <field name="jqyzzsjzws"/>
+                    <field name="snzkxmkzl"/>
+                    <field name="snzkxmbyxsbhgl"/>
+                    <field name="snzpxmcjl"/>
+                    <field name="snzpxmbhgl"/>
+                </tree>
+
+            </field>
+
+        </record>
+
+        <!-- 查询视图-->
+        <record id="view_mqc_lab_search" model="ir.ui.view">
+
+            <field name="name">mqc.lab.search</field>
+            <field name="model">mqc.lab</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="units_name"/>
+                    <field name="year_month"/>
+                </search>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

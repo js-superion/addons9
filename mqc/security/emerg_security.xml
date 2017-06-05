@@ -359,6 +359,12 @@
              <field name="domain_force">[('company_id','child_of',[user.company_id.id])]</field>
         </record>
 
+        <record id="rule_mqc_lab" model="ir.rule">
+            <field name="name">mqc规则:查看检验数据</field>
+            <field name="model_id" ref="model_mqc_lab"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','child_of',[user.company_id.id])]</field>
+        </record>
         <record id="rule_mqc_approval" model="ir.rule">
             <field name="name">mqc规则:查看补报审批数据</field>
             <field name="model_id" ref="model_mqc_dept_approval"/>

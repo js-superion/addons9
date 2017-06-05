@@ -35,6 +35,7 @@
         'views/mqc_emerg.xml',
         'views/mqc_child.xml',
         'views/mqc_icu.xml',
+        'views/mqc_lab.xml',
         'views/mqc_blood.xml',
         'views/mqc_infect.xml',
         'views/mqc_dialysis.xml',

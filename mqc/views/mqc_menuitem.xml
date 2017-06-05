@@ -26,6 +26,8 @@
 
             <menuitem id="menu_act_mqc_index" name="医疗质量" string="医疗质量数据" parent="menu_mqc_form" action="action_mqc_index" groups="group_mqc_index_user"/>
             <menuitem id="menu_act_mqc_pacs" name="医学影像" string="医学影像质控数据" parent="menu_mqc_form" action="action_mqc_pacs" groups="group_mqc_pacs_user"/>
+        <menuitem id="menu_act_mqc_lab" name="临床检验" string="临床检验" parent="menu_mqc_form" action="action_mqc_lab"
+                  groups="group_mqc_lab_user"/>
             <menuitem id="menu_act_mqc_child" name="儿科" string="儿科质控数据" parent="menu_mqc_form" action="action_mqc_child" groups="group_mqc_child_user"/>
             <menuitem id="menu_act_mqc_approval" name="补报审批" string="补报审批" parent="menu_mqc_form" action="action_mqc_approval" groups="group_mqc_approval_user"/>
 
