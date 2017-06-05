@@ -1,0 +1,383 @@
+<odoo>
+    <data>
+
+        <!--用血质控指标-->
+        <!--<record model="ir.actions.act_window" id="action_mqc_blood">-->
+            <!--<field name="name">用血质控指标</field>-->
+            <!--<field name="res_model">mqc.blood</field>-->
+            <!--<field name="view_type">form</field>-->
+            <!--<field name="view_mode">tree,form</field>-->
+        <!--</record>-->
+        <!--&lt;!&ndash; 表单 &ndash;&gt;-->
+        <!--<record id="view_blood_form" model="ir.ui.view">-->
+            <!--<field name="name">mqc.blood.form</field>-->
+            <!--<field name="model">mqc.blood</field>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<form copy="false" create="false" edit="true">-->
+                    <!--<sheet>-->
+                        <!--<notebook colspan="1">-->
+                            <!--&lt;!&ndash;<page string="测试">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<group>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<field   name="report_test" class="oe_inline"/>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</group>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</page>&ndash;&gt;-->
+                            <!--<page string="输血科建设及检测技术月质控报表">-->
+                                <!--<group>-->
+                                    <!--&lt;!&ndash;<field name="mqc_id" class="oe_inline"/>&ndash;&gt;-->
+                                    <!--<field name="report_clinic" class="oe_inline"/>-->
+                                    <!--<field name="report_construct" class="oe_inline"/>-->
+                                    <!--<field name="report_qlty" class="oe_inline"/>-->
+                                    <!--<field name="report_manager" class="oe_inline"/>-->
+                                    <!--<field name="report_advise" class="oe_inline"/>-->
+                                <!--</group>-->
+                            <!--</page>-->
+                            <!--&lt;!&ndash;<page string="输血科建设及检测技术月质控报表">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<group>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;&lt;!&ndash;<field name="mqc_id" class="oe_inline"/>&ndash;&gt;&ndash;&gt;-->
+                                    <!--&lt;!&ndash;&lt;!&ndash;<field name="report_clinic" class="oe_inline"/>&ndash;&gt;&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<field name="report_construct" class="oe_inline"/>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<field name="report_qlty" class="oe_inline"/>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<field name="report_manager" class="oe_inline"/>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<field name="report_advise" class="oe_inline"/>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</group>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</page>&ndash;&gt;-->
+                        <!--</notebook>-->
+                    <!--</sheet>-->
+                <!--</form>-->
+            <!--</field>-->
+        <!--</record>-->
+        <!--&lt;!&ndash; 表格 &ndash;&gt;-->
+        <!--<record id="view_mqc_blood_tree" model="ir.ui.view">-->
+            <!--<field name="name">mqc.blood.tree</field>-->
+            <!--<field name="model">mqc.blood</field>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<tree>-->
+                    <!--<field name="year_month"/>-->
+                    <!--<field name="report_clinic"/>-->
+                    <!--<field name="report_construct"/>-->
+                    <!--<field name="report_qlty"/>-->
+                    <!--<field name="report_manager"/>-->
+                    <!--<field name="report_advise"/>-->
+                <!--</tree>-->
+
+            <!--</field>-->
+
+        <!--</record>-->
+
+
+        <!--全院临床用血情况-->
+        <record model="ir.actions.act_window" id="action_mqc_blood_clinic">
+            <field name="name">全院临床用血情况</field>
+            <field name="res_model">mqc.blood.clinic</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- 表单-->
+        <record id="view_blood_clinic_form" model="ir.ui.view">
+            <field name="name">mqc.blood.clinic.form</field>
+            <field name="model">mqc.blood.clinic</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <notebook colspan="1">
+                            <page string="全院临床用血">
+                                <div id="blood_clinic_form">
+
+                                </div>
+                            </page>
+                        </notebook>
+                        <div>
+                            <printbutton htmlfrom="client"  string="打印" type="object" name="print" model="mqc.blood.clinic"  class="btn-primary"/>
+                            <!--<expbutton exp_id="blood_clinic_form"  exp_type="doc" string="导出" type="object" name="export"  model="mqc.blood.clinic"  class="btn-primary"/>-->
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--  列表-->
+        <record id="view_blood_clinic_tree" model="ir.ui.view">
+            <field name="name">mqc.blood.clinic.tree</field>
+            <field name="model">mqc.blood.clinic</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="year_month"></field>
+                    <field name="units_name"></field>
+                    <field name="out_case"></field>
+                    <field name="use_blood_case"></field>
+                    <field name="opr_num"></field>
+                    <field name="opr_use_blood"></field>
+                    <field name="create_uid"></field>
+                    <field name="create_date"></field>
+                </tree>
+            </field>
+        </record>
+
+        <!--输血科建设及检测技术-->
+        <record model="ir.actions.act_window" id="action_mqc_blood_construct">
+            <field name="name">输血科建设及检测技术</field>
+            <field name="res_model">mqc.blood.construct</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!--  表单 -->
+        <record id="view_blood_construct_form" model="ir.ui.view">
+            <field name="name">mqc.blood.construct.form</field>
+            <field name="model">mqc.blood.construct</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="year_month"  attrs="{'readonly': True}" class="oe_inline" string="上报月份"/>
+                        </group>
+                        <notebook colspan="2">
+
+
+                            <page string="输血科建设及检测技术">
+                                 <div  id="blood_cons_form">
+                                <group>
+                                    <field name="create_type" class="oe_inline"/>
+                                    <field name="dept_emp_num" class="oe_inline"/>
+                                    <field name="required_device" class="oe_inline"/>
+                                    <field name="shortage_device" class="oe_inline"/>
+                                    <field name="detail_ids" class="oe_inline">
+                                        <tree string="检测技术填写" editable="bottom">
+                                            <field name="tech_id"  options="{'no_create': True, 'no_open': True}"/>
+                                            <field name="opr_method"/>
+                                            <field name="cases"/>
+                                            <field name="indoor_qc_freq"/>
+                                            <field name="province_eqa"/>
+                                            <field name="country_eqa"/>
+                                        </tree>
+                                        <form string="检测技术填写">
+                                            <group>
+                                                <field name="opr_method"/>
+                                                <field name="cases"/>
+                                                <field name="indoor_qc_freq"/>
+                                                <field name="province_eqa"/>
+                                                <field name="country_eqa"/>
+                                            </group>
+                                        </form>
+                                    </field>
+                                </group>
+                                 </div>
+                            </page>
+
+
+                        </notebook>
+                         <div>
+                            <!--<printbutton htmlfrom="client"  string="打印" type="object" name="print"   class="btn-primary"/>-->
+                            <!--<expbutton exp_id="blood_cons_form"  exp_type="doc" string="导出" type="object" name="export"  model="mqc.blood.clinic"  class="btn-primary"/>-->
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--  列表 -->
+        <record id="view_blood_construct_tree" model="ir.ui.view">
+            <field name="name">mqc.blood.construct.tree</field>
+            <field name="model">mqc.blood.construct</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="year_month" ></field>
+                    <field name="units_name"></field>
+                    <field name="create_type"/>
+                    <field name="dept_emp_num" />
+                    <field name="bed_num" />
+                    <field name="required_device" />
+                    <field name="shortage_device" />
+                </tree>
+            </field>
+        </record>
+
+        <!--血液成分质量-->
+        <record model="ir.actions.act_window" id="action_mqc_blood_qlty">
+            <field name="name">血液成分质量</field>
+            <field name="res_model">mqc.blood.qlty</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--  表单 -->
+        <record id="view_blood_qlty_form" model="ir.ui.view">
+            <field name="name">mqc.blood.qlty.form</field>
+            <field name="model">mqc.blood.qlty</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <notebook colspan="1">
+                            <page string="血液成分质量反馈">
+                                <group>
+                                    <field name="units_name" class="oe_inline"/>
+                                    <field name="year_month" attrs="{'readonly': True}"  string="上报月份" class="oe_inline"/>
+                                    <field name="detail_ids" class="oe_inline">
+                                        <tree string="血液成分质量明细" editable="bottom">
+                                            <field name="component_id" options="{'no_create': True, 'no_open': True}"/>
+                                            <field name="qlty_des"/>
+                                            <field name="bld_bag_no"/>
+                                            <field name="bld_spec"/>
+                                        </tree>
+                                        <form string="血液成分质量明细">
+                                            <group>
+                                                <field name="component_id"/>
+                                                <field name="qlty_des"/>
+                                                <field name="bld_bag_no"/>
+                                                <field name="bld_spec"/>
+                                            </group>
+                                        </form>
+                                    </field>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--  列表 -->
+        <record id="view_blood_qlty_tree" model="ir.ui.view">
+            <field name="name">mqc.blood.qlty.tree</field>
+            <field name="model">mqc.blood.qlty</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="year_month"></field>
+                    <field name="units_name"></field>
+                    <field name="create_uid"></field>
+                    <field name="create_date"></field>
+                </tree>
+            </field>
+        </record>
+
+
+
+        <!--输血职能管理-->
+        <record model="ir.actions.act_window" id="action_mqc_blood_manage">
+            <field name="name">输血职能管理</field>
+            <field name="res_model">mqc.blood.manage</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- 表单 -->
+        <record id="view_blood_manage_form" model="ir.ui.view">
+            <field name="name">mqc.blood.manage.form</field>
+            <field name="model">mqc.blood.manage</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <notebook colspan="1">
+                            <page string="输血职能管理">
+                                <group colspan="4">
+                                    <group colspan="2">
+                                        <field name="units_name" class="oe_inline"/>
+                                         <field name="year_month"  attrs="{'readonly': True}" class="oe_inline" string="上报月份"/>
+                                        <field name="detail_ids" class="oe_inline">
+                                            <tree string="管理项目明细" editable="bottom">
+                                                <field name="quota_id" options="{'no_create': True, 'no_open': True}"/>
+                                                <field name="rate"/>
+                                                <field name="remark"/>
+                                            </tree>
+                                            <form string="管理项目明细">
+                                                <group>
+                                                    <field name="quota_id" />
+                                                    <field name="rate"/>
+                                                    <field name="remark"/>
+                                                </group>
+                                            </form>
+                                        </field>
+                                    </group>
+                                    <group colspan="2">
+                                        <field name="year_month" attrs="{'readonly': True}" class="oe_inline"/>
+                                        <field name="react_ids" class="oe_inline">
+                                            <tree string="不良反应报告" editable="bottom">
+                                                <field name="react_id" options="{'no_create': True, 'no_open': True}"/>
+                                                <field name="cases"/>
+                                            </tree>
+                                            <form string="检测技术填写">
+                                                <group>
+                                                    <field name="cases"/>
+                                                </group>
+                                            </form>
+                                        </field>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--  列表 -->
+        <record id="view_blood_manage_tree" model="ir.ui.view">
+            <field name="name">mqc.blood.manage.tree</field>
+            <field name="model">mqc.blood.manage</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="year_month"></field>
+                    <field name="units_name"></field>
+                    <field name="create_uid"></field>
+                    <field name="create_date"></field>
+                </tree>
+            </field>
+        </record>
+
+
+        <!--质量安全工作意见反馈-->
+        <record model="ir.actions.act_window" id="action_mqc_blood_advise">
+            <field name="name">质量安全工作意见反馈</field>
+            <field name="res_model">mqc.blood.advise</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- 表单-->
+        <record id="view_blood_advise_form" model="ir.ui.view">
+            <field name="name">mqc.blood.advise.form</field>
+            <field name="model">mqc.blood.advise</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <notebook colspan="1">
+                            <page string="意见反馈">
+                                <group>
+                                    <field name="units_name" class="oe_inline"/>
+                                    <field name="year_month" class="oe_inline"/>
+                                    <field name="advise" class="oe_inline"/>
+                                    <field name="safe_advise" class="oe_inline"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--  列表 -->
+        <record id="view_blood_advise_tree" model="ir.ui.view">
+            <field name="name">mqc.blood.advise.tree</field>
+            <field name="model">mqc.blood.advise</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="year_month"></field>
+                    <field name="units_name"></field>
+                    <field name="advise" class="oe_inline"/>
+                    <field name="safe_advise" class="oe_inline"/>
+                    <field name="create_uid"></field>
+                    <field name="create_date"></field>
+                </tree>
+            </field>
+        </record>
+
+        <!-- 查询视图-->
+        <record id="view_mqc_blood_search" model="ir.ui.view">
+            <field name="name">mqc.mqc.search</field>
+            <field name="model">mqc.blood</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="create_date"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>

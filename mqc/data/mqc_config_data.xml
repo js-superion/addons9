@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data noupdate="1">  <!-- 'noupdate' means existing data is *not* overwritten when module is updated -->
+    <record id="mqc_report_forbiden_date" model="ir.config_parameter">
+        <field name="key">mqc_report_forbiden_date</field>
+        <field name="value">10</field>
+    </record>
+</data>
+</odoo>

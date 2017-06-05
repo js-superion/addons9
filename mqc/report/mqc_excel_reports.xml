@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+    <!--用血(全院临床用血情况) -->
+    <record id="action_mqc_blood_clinic_report" model="ir.actions.report.xml">
+        <field name="name">导出(全院临床用血)</field>
+        <field name="report_name">mqc.report_blood_clinic</field>
+        <field name="model">mqc.blood.clinic</field>    <!-- Report will appear on 'Print' menu for partners. -->
+        <field name="auto" eval="False"/>
+        <field name="is_pentaho_report" eval="True"/>
+        <field name="report_type">pentaho</field>
+        <field name="pentaho_report_model_id" ref="mqc.model_mqc_blood_clinic"/>
+        <field name="pentaho_report_output_type">xls</field>
+        <field name="pentaho_filename">mqc/report/blood_clinic.prpt</field>
+        <field name="pentaho_load_file" eval="True"/>
+    </record>
+    <record id="action_mqc_blood_clinic_report_values" model="ir.values">
+        <field name="name">全院临床用血设置</field>
+        <field name="key2">client_action_multi</field>
+        <field name="value" eval="'ir.actions.report.xml,' +str(ref('action_mqc_blood_clinic_report'))" />
+        <field name="key">action</field>
+        <field name="model">mqc.blood.clinic</field>
+    </record>
+
+    <!--用血(输血科建设与检测技术) -->
+    <record id="action_mqc_blood_construct_report" model="ir.actions.report.xml">
+        <field name="name">导出Excel(输血科建设)</field>
+        <field name="report_name">mqc.report_blood_construct</field>
+        <field name="model">mqc.blood</field>    <!-- Report will appear on 'Print' menu for partners. -->
+        <field name="auto" eval="False"/>
+        <field name="is_pentaho_report" eval="True"/>
+        <field name="report_type">pentaho</field>
+        <field name="pentaho_report_model_id" ref="mqc.model_mqc_blood_construct"/>
+        <field name="pentaho_report_output_type">xls</field>
+        <field name="pentaho_filename">mqc/report/blood_construct.prpt</field>
+        <field name="pentaho_load_file" eval="True"/>
+    </record>
+    <record id="action_mqc_blood_construct_report_values" model="ir.values">
+        <field name="name">输血科建设导出设置</field>
+        <field name="key2">client_action_multi</field>
+        <field name="value" eval="'ir.actions.report.xml,' +str(ref('action_mqc_blood_construct_report'))" />
+        <field name="key">action</field>
+        <field name="model">mqc.blood.construct</field>
+    </record>
+
+    <!--用血(血液成分质量) -->
+    <record id="action_mqc_blood_qlty_report" model="ir.actions.report.xml">
+        <field name="name">导出(血液成分质量)</field>
+        <field name="report_name">mqc.report_blood_qlty</field>
+        <field name="model">mqc.blood.qlty</field>    <!-- Report will appear on 'Print' menu for partners. -->
+        <field name="auto" eval="False"/>
+        <field name="is_pentaho_report" eval="True"/>
+        <field name="report_type">pentaho</field>
+        <field name="pentaho_report_model_id" ref="mqc.model_mqc_blood_qlty"/>
+        <field name="pentaho_report_output_type">xls</field>
+        <field name="pentaho_filename">mqc/report/blood_qlty.prpt</field>
+        <field name="pentaho_load_file" eval="True"/>
+    </record>
+    <record id="action_mqc_blood_qlty_report_values" model="ir.values">
+        <field name="name">血液成分质量导出设置</field>
+        <field name="key2">client_action_multi</field>
+        <field name="value" eval="'ir.actions.report.xml,' +str(ref('action_mqc_blood_qlty_report'))" />
+        <field name="key">action</field>
+        <field name="model">mqc.blood.qlty</field>
+    </record>
+
+    <!--用血(输血职能管理) -->
+    <record id="action_mqc_blood_manage_report" model="ir.actions.report.xml">
+        <field name="name">导出(输血职能管理)</field>
+        <field name="report_name">mqc.report_blood_manage</field>
+        <field name="model">mqc.blood.manage</field>
+        <field name="auto" eval="False"/>
+        <field name="is_pentaho_report" eval="True"/>
+        <field name="report_type">pentaho</field>
+        <field name="pentaho_report_model_id" ref="mqc.model_mqc_blood_manage"/>
+        <field name="pentaho_report_output_type">xls</field>
+        <field name="pentaho_filename">mqc/report/blood_manage.prpt</field>
+        <field name="pentaho_load_file" eval="True"/>
+    </record>
+    <record id="action_mqc_blood_manage_report_values" model="ir.values">
+        <field name="name">输血职能管理导出设置</field>
+        <field name="key2">client_action_multi</field>
+        <field name="value" eval="'ir.actions.report.xml,' +str(ref('action_mqc_blood_manage_report'))" />
+        <field name="key">action</field>
+        <field name="model">mqc.blood.manage</field>
+    </record>
+
+    <!--用血(质量安全工作意见) -->
+    <record id="action_mqc_blood_advise_report" model="ir.actions.report.xml">
+        <field name="name">导出Excel(工作意见)</field>
+        <field name="report_name">mqc.report_blood_advise</field>
+        <field name="model">mqc.blood.advise</field>    <!-- Report will appear on 'Print' menu for partners. -->
+        <field name="auto" eval="False"/>
+        <field name="is_pentaho_report" eval="True"/>
+        <field name="report_type">pentaho</field>
+        <field name="pentaho_report_model_id" ref="mqc.model_mqc_blood_advise"/>
+        <field name="pentaho_report_output_type">xls</field>
+        <field name="pentaho_filename">mqc/report/blood_advise.prpt</field>
+        <field name="pentaho_load_file" eval="True"/>
+    </record>
+    <record id="action_mqc_blood_advise_report_values" model="ir.values">
+        <field name="name">临床用血导出设置</field>
+        <field name="key2">client_action_multi</field>
+        <field name="value" eval="'ir.actions.report.xml,' +str(ref('action_mqc_blood_advise_report'))" />
+        <field name="key">action</field>
+        <field name="model">mqc.blood.advise</field>
+    </record>
+
+    <!--儿科 -->
+    <record id="action_mqc_child_report" model="ir.actions.report.xml">
+        <field name="name">导出Excel(儿科)</field>
+        <field name="report_name">mqc.report_child</field>
+        <field name="model">mqc.child</field>    <!-- Report will appear on 'Print' menu for partners. -->
+        <field name="auto" eval="False"/>
+        <field name="is_pentaho_report" eval="True"/>
+        <field name="report_type">pentaho</field>
+        <field name="pentaho_report_model_id" ref="mqc.model_mqc_child"/>
+        <field name="pentaho_report_output_type">xls</field>
+        <field name="pentaho_filename">mqc/report/child.prpt</field>
+        <field name="pentaho_load_file" eval="True"/>
+    </record>
+    <record id="action_mqc_child_report_values" model="ir.values">
+        <field name="name">儿科导出设置</field>
+        <field name="key2">client_action_multi</field>
+        <field name="value" eval="'ir.actions.report.xml,' +str(ref('action_mqc_child_report'))" />
+        <field name="key">action</field>
+        <field name="model">mqc.child</field>
+    </record>
+
+    <!--肾病学（即：血透） -->
+    <record id="action_mqc_dialysis_report" model="ir.actions.report.xml">
+        <field name="name">导出Excel(血透)</field>
+        <field name="report_name">mqc.report_dialysis</field>
+        <field name="model">mqc.dialysis</field>    <!-- Report will appear on 'Print' menu for partners. -->
+        <field name="auto" eval="False"/>
+        <field name="is_pentaho_report" eval="True"/>
+        <field name="report_type">pentaho</field>
+        <field name="pentaho_report_model_id" ref="mqc.model_mqc_dialysis"/>
+        <field name="pentaho_report_output_type">xls</field>
+        <field name="pentaho_filename">mqc/report/dialysis.prpt</field>
+        <field name="pentaho_load_file" eval="True"/>
+    </record>
+    <record id="action_mqc_dialysis_report_values" model="ir.values">
+        <field name="name">血透导出设置</field>
+        <field name="key2">client_action_multi</field>
+        <field name="value" eval="'ir.actions.report.xml,' +str(ref('action_mqc_dialysis_report'))" />
+        <field name="key">action</field>
+        <field name="model">mqc.dialysis</field>
+    </record>
+
+    <!-- 药事管理 -->
+    <record id="action_mqc_drug_report" model="ir.actions.report.xml">
+        <field name="name">导出Excel(药事管理)</field>
+        <field name="report_name">mqc.report_drug</field>
+        <field name="model">mqc.drug</field>    <!-- Report will appear on 'Print' menu for partners. -->
+        <field name="auto" eval="False"/>
+        <field name="is_pentaho_report" eval="True"/>
+        <field name="report_type">pentaho</field>
+        <field name="pentaho_report_model_id" ref="mqc.model_mqc_drug"/>
+        <field name="pentaho_report_output_type">xls</field>
+        <field name="pentaho_filename">mqc/report/drug.prpt</field>
+        <field name="pentaho_load_file" eval="True"/>
+    </record>
+    <record id="action_mqc_drug_report_values" model="ir.values">
+        <field name="name">药事管理导出设置</field>
+        <field name="key2">client_action_multi</field>
+        <field name="value" eval="'ir.actions.report.xml,' +str(ref('action_mqc_drug_report'))" />
+        <field name="key">action</field>
+        <field name="model">mqc.drug</field>
+    </record>
+
+    <!--急诊 -->
+    <record id="action_mqc_emergency_report" model="ir.actions.report.xml">
+        <field name="name">导出Excel(急诊)</field>
+        <field name="report_name">mqc.report_emerg</field>
+        <field name="model">mqc.emergency</field>    <!-- Report will appear on 'Print' menu for partners. -->
+        <field name="auto" eval="False"/>
+        <field name="is_pentaho_report" eval="True"/>
+        <field name="report_type">pentaho</field>
+        <field name="pentaho_report_model_id" ref="mqc.model_mqc_emergency"/>
+        <field name="pentaho_report_output_type">xls</field>
+        <field name="pentaho_filename">mqc/report/emergency.prpt</field>
+        <field name="pentaho_load_file" eval="True"/>
+    </record>
+    <record id="action_mqc_emergency_report_values" model="ir.values">
+        <field name="name">急诊导出设置</field>
+        <field name="key2">client_action_multi</field>
+        <field name="value" eval="'ir.actions.report.xml,' +str(ref('action_mqc_emergency_report'))" />
+        <field name="key">action</field>
+        <field name="model">mqc.emergency</field>
+    </record>
+
+    <!--ICU -->
+    <record id="action_mqc_icu_report" model="ir.actions.report.xml">
+        <field name="name">导出Excel(ICU)</field>
+        <field name="report_name">mqc.report_icu</field>
+        <field name="model">mqc.icu</field>    <!-- Report will appear on 'Print' menu for partners. -->
+        <field name="auto" eval="False"/>
+        <field name="is_pentaho_report" eval="True"/>
+        <field name="report_type">pentaho</field>
+        <field name="pentaho_report_model_id" ref="mqc.model_mqc_icu"/>
+        <field name="pentaho_report_output_type">xls</field>
+        <field name="pentaho_filename">mqc/report/icu.prpt</field>
+        <field name="pentaho_load_file" eval="True"/>
+    </record>
+    <record id="action_mqc_icu_report_values" model="ir.values">
+        <field name="name">icu导出设置</field>
+        <field name="key2">client_action_multi</field>
+        <field name="value" eval="'ir.actions.report.xml,' +str(ref('action_mqc_icu_report'))" />
+        <field name="key">action</field>
+        <field name="model">mqc.icu</field>
+    </record>
+
+    <!--医疗质量信息（index） -->
+    <record id="action_mqc_index_report" model="ir.actions.report.xml">
+        <field name="name">导出Excel(医疗质量)</field>
+        <field name="report_name">mqc.report_index</field>
+        <field name="model">mqc.index</field>    <!-- Report will appear on 'Print' menu for partners. -->
+        <field name="auto" eval="False"/>
+        <field name="is_pentaho_report" eval="True"/>
+        <field name="report_type">pentaho</field>
+        <field name="pentaho_report_model_id" ref="mqc.model_mqc_index"/>
+        <field name="pentaho_report_output_type">xls</field>
+        <field name="pentaho_filename">mqc/report/index.prpt</field>
+        <field name="pentaho_load_file" eval="True"/>
+    </record>
+    <record id="action_mqc_index_report_values" model="ir.values">
+        <field name="name">医疗质量导出设置</field>
+        <field name="key2">client_action_multi</field>
+        <field name="value" eval="'ir.actions.report.xml,' +str(ref('action_mqc_index_report'))" />
+        <field name="key">action</field>
+        <field name="model">mqc.index</field>
+    </record>
+
+    <!--院感（infect） -->
+    <record id="action_mqc_infect_report" model="ir.actions.report.xml">
+        <field name="name">导出Excel(院感)</field>
+        <field name="report_name">mqc.report_infect</field>
+        <field name="model">mqc.infect</field>
+        <field name="auto" eval="False"/>
+        <field name="is_pentaho_report" eval="True"/>
+        <field name="report_type">pentaho</field>
+        <field name="pentaho_report_model_id" ref="mqc.model_mqc_infect"/>
+        <field name="pentaho_report_output_type">xls</field>
+        <field name="pentaho_filename">mqc/report/infect.prpt</field>
+        <field name="pentaho_load_file" eval="True"/>
+    </record>
+    <record id="action_mqc_infect_report_values" model="ir.values">
+        <field name="name">院感导出设置</field>
+        <field name="key2">client_action_multi</field>
+        <field name="value" eval="'ir.actions.report.xml,' +str(ref('action_mqc_infect_report'))" />
+        <field name="key">action</field>
+        <field name="model">mqc.infect</field>
+    </record>
+
+    <!--口腔（mouth） -->
+    <record id="action_mqc_mouth_report" model="ir.actions.report.xml">
+        <field name="name">导出Excel(口腔)</field>
+        <field name="report_name">mqc.report_mouth</field>
+        <field name="model">mqc.mouth</field>
+        <field name="auto" eval="False"/>
+        <field name="is_pentaho_report" eval="True"/>
+        <field name="report_type">pentaho</field>
+        <field name="pentaho_report_model_id" ref="mqc.model_mqc_mouth"/>
+        <field name="pentaho_report_output_type">xls</field>
+        <field name="pentaho_filename">mqc/report/mouth.prpt</field>
+        <field name="pentaho_load_file" eval="True"/>
+    </record>
+    <record id="action_mqc_mouth_report_values" model="ir.values">
+        <field name="name">急诊导出设置</field>
+        <field name="key2">client_action_multi</field>
+        <field name="value" eval="'ir.actions.report.xml,' +str(ref('action_mqc_mouth_report'))" />
+        <field name="key">action</field>
+        <field name="model">mqc.mouth</field>
+    </record>
+
+    <!--麻醉（narcosis） -->
+    <record id="action_mqc_narcosis_report" model="ir.actions.report.xml">
+        <field name="name">导出Excel(麻醉)</field>
+        <field name="report_name">mqc.report_narcosis</field>
+        <field name="model">mqc.narcosis</field>
+        <field name="auto" eval="False"/>
+        <field name="is_pentaho_report" eval="True"/>
+        <field name="report_type">pentaho</field>
+        <field name="pentaho_report_model_id" ref="mqc.model_mqc_narcosis"/>
+        <field name="pentaho_report_output_type">xls</field>
+        <field name="pentaho_filename">mqc/report/narcosis.prpt</field>
+        <field name="pentaho_load_file" eval="True"/>
+    </record>
+    <record id="action_mqc_narcosis_report_values" model="ir.values">
+        <field name="name">麻醉导出设置</field>
+        <field name="key2">client_action_multi</field>
+        <field name="value" eval="'ir.actions.report.xml,' +str(ref('action_mqc_narcosis_report'))" />
+        <field name="key">action</field>
+        <field name="model">mqc.narcosis</field>
+    </record>
+
+    <!--护理（nurse） -->
+    <record id="action_mqc_nurse_report" model="ir.actions.report.xml">
+        <field name="name">导出Excel(护理)</field>
+        <field name="report_name">mqc.report_nurse</field>
+        <field name="model">mqc.nurse</field>
+        <field name="auto" eval="False"/>
+        <field name="is_pentaho_report" eval="True"/>
+        <field name="report_type">pentaho</field>
+        <field name="pentaho_report_model_id" ref="mqc.model_mqc_nurse"/>
+        <field name="pentaho_report_output_type">xls</field>
+        <field name="pentaho_filename">mqc/report/nurse.prpt</field>
+        <field name="pentaho_load_file" eval="True"/>
+    </record>
+    <record id="action_mqc_nurse_report_values" model="ir.values">
+        <field name="name">护理导出设置</field>
+        <field name="key2">client_action_multi</field>
+        <field name="value" eval="'ir.actions.report.xml,' +str(ref('action_mqc_nurse_report'))" />
+        <field name="key">action</field>
+        <field name="model">mqc.nurse</field>
+    </record>
+
+    <!--医学影像（pacs） -->
+    <record id="action_mqc_pacs_report" model="ir.actions.report.xml">
+        <field name="name">导出Excel(影像)</field>
+        <field name="report_name">mqc.report_pacs</field>
+        <field name="model">mqc.pacs</field>
+        <field name="auto" eval="False"/>
+        <field name="is_pentaho_report" eval="True"/>
+        <field name="report_type">pentaho</field>
+        <field name="pentaho_report_model_id" ref="mqc.model_mqc_pacs"/>
+        <field name="pentaho_report_output_type">xls</field>
+        <field name="pentaho_filename">mqc/report/pacs.prpt</field>
+        <field name="pentaho_load_file" eval="True"/>
+    </record>
+    <record id="action_mqc_pacs_report_values" model="ir.values">
+        <field name="name">影像导出设置</field>
+        <field name="key2">client_action_multi</field>
+        <field name="value" eval="'ir.actions.report.xml,' +str(ref('action_mqc_pacs_report'))" />
+        <field name="key">action</field>
+        <field name="model">mqc.pacs</field>
+    </record>
+
+    <!--病理（pathology） -->
+    <record id="action_mqc_pathology_report" model="ir.actions.report.xml">
+        <field name="name">导出Excel(病理)</field>
+        <field name="report_name">mqc.report_pathology</field>
+        <field name="model">mqc.pathology</field>
+        <field name="auto" eval="False"/>
+        <field name="is_pentaho_report" eval="True"/>
+        <field name="report_type">pentaho</field>
+        <field name="pentaho_report_model_id" ref="mqc.model_mqc_pathology"/>
+        <field name="pentaho_report_output_type">xls</field>
+        <field name="pentaho_filename">mqc/report/pathology.prpt</field>
+        <field name="pentaho_load_file" eval="True"/>
+    </record>
+    <record id="action_mqc_pathology_report_values" model="ir.values">
+        <field name="name">病理导出设置</field>
+        <field name="key2">client_action_multi</field>
+        <field name="value" eval="'ir.actions.report.xml,' +str(ref('action_mqc_pathology_report'))" />
+        <field name="key">action</field>
+        <field name="model">mqc.pathology</field>
+    </record>
+
+
+</data>
+</odoo>

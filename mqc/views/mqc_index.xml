@@ -1,0 +1,126 @@
+<odoo>
+    <data>
+
+        <record model="ir.actions.act_window" id="action_mqc_index">
+            <field name="name">医疗质量指标</field>
+            <field name="res_model">mqc.index</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!-- index form -->
+        <record id="view_mqc_index_form" model="ir.ui.view">
+            <field name="name">mqc.index.form</field>
+            <field name="model">mqc.index</field>
+            <field name="arch" type="xml">
+                <form copy="false" create="false" edit="true">
+                    <sheet>
+                        <group>
+                            <field name="year_month"  attrs="{'readonly': True}" class="oe_inline" string="上报月份"/>
+                        </group>
+                        <group>
+                            <group string="一般指标">
+                                <field name="outpat_capacity"/>
+                                <field name="discharged_case"/>
+                                <field name="accord_diag_case"/>
+                                <field name="rescue_rate"/>
+                                <field name="avg_adm_days"/>
+                                <field name="bed_use_rate"/>
+                                <field name="mr_grade_a_rate"/>
+                            </group>
+                            <group string="专项指标">
+                                <field name="opr_three_four"/>
+                                <field name="unplanned_opr_two"/>
+                                <field name="antibiotics_use_rate" class="oe_inline"/>
+                                <field name="cp_disease"/>
+                            </group>
+                            <group string="医疗纠纷情况">
+                                <field name="dispute_case"/>
+                                <field name="attacked_case"/>
+                            </group>
+                            <group string="落实患者安全目标（是/否）">
+                                <field name="protect_pat1" widget="radio" options="{'horizontal': True}"/>
+                                <field name="protect_pat2" widget="radio" options="{'horizontal': True}"/>
+                                <field name="protect_pat3" widget="radio" options="{'horizontal': True}"/>
+                            </group>
+
+                            <group string="临床路径管理">
+                                <field name="is_cp" widget="radio" options="{'horizontal': True}"/>
+                                <field name="cp_discharged_case"/>
+                                <field name="cp_accord_diag_case"/>
+                                <field name="dept_with_cp"/>
+                                <field name="disease_case_in_cp"/>
+                                <field name="cp_case"/>
+                                <field name="cp_variation"/>
+                                <field name="cp_quit"/>
+                                <field name="cp_finish"/>
+                            </group>
+
+                            <group string="医疗质量管理与控制体系建设">
+                                <field name="kzjysjzpxm_case"/>
+                                <field name="jcjyjg_1"/>
+                                <field name="jcjyjg_2"/>
+                                <field name="ndkzycblhz_case"/>
+                                <field name="ndkzycyxzdhz_case"/>
+                            </group>
+                            <group string="疾病诊疗质量连续化管理">
+                                <field name="kzzlzllxhgljb_case"/>
+                                <field name="xgbzxzsl"/>
+                            </group>
+
+                            <group string="日间手术质量精细化管理">
+                                <field name="sfjlrjsszlaqglzd" widget="radio" options="{'horizontal': True}"/>
+                                <field name="kzrjssbz_case"/>
+                                <field name="rjssjsml_case"/>
+                                <field name="kzrjss_case"/>
+                                <field name="cqqsmzrjss_case"/>
+                                <field name="rjsshzbfzfs_case"/>
+                                <field name="rjsshzsh48_case"/>
+                                <field name="rjsshzshsf_case"/>
+                            </group>
+                            <group string="疾病诊疗质量连续化管理">
+                                <field name="sfkzjrzljs" widget="radio" options="{'horizontal': True}"/>
+                                <field name="sfkzsjysnjzljs" widget="radio" options="{'horizontal': True}"/>
+                                <field name="sfkzxyjhjs" widget="radio" options="{'horizontal': True}"/>
+                            </group>
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- 表格视图 -->
+        <record id="view_mqc_index_tree" model="ir.ui.view">
+            <field name="name">mqc.index.tree</field>
+            <field name="model">mqc.index</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="year_month"/>
+                    <field name="outpat_capacity"/>
+                    <field name="discharged_case"/>
+                    <field name="accord_diag_case"/>
+                    <field name="rescue_rate"/>
+                </tree>
+
+            </field>
+
+        </record>
+
+        <!-- 查询视图-->
+        <record id="view_mqc_index_search" model="ir.ui.view">
+
+            <field name="name">mqc.index.search</field>
+            <field name="model">mqc.index</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="units_name"/>
+                    <field name="year_month"/>
+                </search>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

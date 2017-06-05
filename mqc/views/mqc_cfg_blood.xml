@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!--输血检测技术 -->
+        <record model="ir.actions.act_window" id="action_mqc_blood_tech">
+            <field name="name">输血检测技术</field>
+            <field name="res_model">mqc.blood.tech</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- 表单视图 -->
+        <record id="view_mqc_blood_tech_form" model="ir.ui.view">
+            <field name="name">mqc.blood.tech.form</field>
+            <field name="model">mqc.blood.tech</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name"></field>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <!-- 列表视图 -->
+        <record id="view_mqc_blood_tech_tree" model="ir.ui.view">
+            <field name="name">mqc.blood.tech.tree</field>
+            <field name="model">mqc.blood.tech</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"></field>
+                    <field name="create_uid"></field>
+                    <field name="create_date"></field>
+                </tree>
+
+            </field>
+        </record>
+
+        <!--血液成分 -->
+        <record model="ir.actions.act_window" id="action_mqc_blood_component">
+            <field name="name">血液成分</field>
+            <field name="res_model">mqc.blood.component</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- 表单视图 -->
+        <record id="view_mqc_blood_component_form" model="ir.ui.view">
+            <field name="name">mqc.blood.component.form</field>
+            <field name="model">mqc.blood.component</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name"></field>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <!-- 列表视图 -->
+        <record id="view_mqc_blood_component_tree" model="ir.ui.view">
+            <field name="name">mqc.blood.component.tree</field>
+            <field name="model">mqc.blood.tech</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"></field>
+                    <field name="create_uid"></field>
+                    <field name="create_date"></field>
+                </tree>
+
+            </field>
+        </record>
+
+        <!--输血管理指标 -->
+        <record model="ir.actions.act_window" id="action_mqc_blood_quota">
+            <field name="name">输血管理指标</field>
+            <field name="res_model">mqc.blood.quota</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- 表单视图 -->
+        <record id="view_mqc_blood_quota_form" model="ir.ui.view">
+            <field name="name">mqc.blood.quota.form</field>
+            <field name="model">mqc.blood.quota</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name"></field>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <!-- 列表视图 -->
+        <record id="view_mqc_blood_component_tree" model="ir.ui.view">
+            <field name="name">mqc.blood.quota.tree</field>
+            <field name="model">mqc.blood.quota</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"></field>
+                    <field name="create_uid"></field>
+                    <field name="create_date"></field>
+                </tree>
+
+            </field>
+        </record>
+
+        <!--不良反应 -->
+        <record model="ir.actions.act_window" id="action_mqc_blood_react">
+            <field name="name">输血不良反应</field>
+            <field name="res_model">mqc.blood.react</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- 表单视图 -->
+        <record id="view_mqc_blood_react_form" model="ir.ui.view">
+            <field name="name">mqc.blood.react.form</field>
+            <field name="model">mqc.blood.react</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name"></field>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <!-- 列表视图 -->
+        <record id="view_mqc_blood_component_tree" model="ir.ui.view">
+            <field name="name">mqc.blood.react.tree</field>
+            <field name="model">mqc.blood.react</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"></field>
+                    <field name="create_uid"></field>
+                    <field name="create_date"></field>
+                </tree>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>
