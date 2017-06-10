@@ -59,6 +59,7 @@
             <field name="arch" type="xml">
                 <tree copy="false">
                     <field name="year_month" />
+                    <field name="units_name"/>
                     <field name="mzrs" />
                     <field name="jzrs" />
                     <field name="jzwzbqjs" />

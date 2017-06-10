@@ -59,6 +59,7 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="year_month" />
+                    <field name="units_name"/>
                     <field name="frozen_section_case"/>
                     <field name="elivision_case"/>
                     <field name="fish_case"/>

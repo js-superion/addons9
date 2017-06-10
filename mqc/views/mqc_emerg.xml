@@ -166,6 +166,7 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="year_month"/>
+                    <field name="units_name"/>
                     <field name="emerg_case" sum ="共:"/>
                     <field name="critical_case" sum ="共:"/>
                     <field name="emerg_multiple" sum ="共:"/>

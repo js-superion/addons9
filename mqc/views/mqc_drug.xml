@@ -117,6 +117,7 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="year_month" class="oe_inline"/>
+                    <field name="units_name"/>
                     <field name="create_uid" class="oe_inline"/>
                     <field name="lcypjqsl" class="oe_inline"/>
                     <field name="ypcg_rate" class="oe_inline"/>

@@ -53,6 +53,7 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="year_month" />
+                    <field name="units_name"/>
                     <field name="treated_rate" />
                     <field name="apache2_excess15" />
                     <field name="joint_rounds" />

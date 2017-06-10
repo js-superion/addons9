@@ -327,6 +327,7 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="year_month" class="oe_inline"/>
+                    <field name="units_name"/>
                     <field name="out_case" class="oe_inline"/>
                     <field name="infect_pat" class="oe_inline"/>
                     <field name="infect_rate" class="oe_inline"/>

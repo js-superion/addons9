@@ -54,7 +54,65 @@
                 </form>
             </field>
         </record>
+        <!-- 介入放射 -->
+        <record id="view_mqc_pacs_intervene_form" model="ir.ui.view">
+            <field name="name">mqc.pacs.intervene.form</field>
+            <field name="model">mqc.pacs.intervene</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <notebook colspan="3">
+                            <page string="诊断部分">
+                                <group>
+                                    <field name="open_bed_case" class="oe_inline"/>
+                                    <field name="inp_case" class="oe_inline"/>
+                                    <field name="outp_case" class="oe_inline"/>
+                                    <field name="bed_use_rate" class="oe_inline"/>
+                                    <field name="in_out_accord_diag" class="oe_inline"/>
+                                    <field name="self_pay_case" class="oe_inline"/>
+                                    <field name="insurance_pats" class="oe_inline"/>
+                                    <field name="critical_pat_case" class="oe_inline"/>
+                                    <field name="serial_rescue_case" class="oe_inline"/>
+                                </group>
+                            </page>
+                            <page string="介入放射指标">
+                                <group>
+                                    <field name="avg_adm_days" class="oe_inline"/>
+                                    <field name="outp_avg_charge" class="oe_inline"/>
+                                    <field name="drug_ratio" class="oe_inline"/>
+                                    <field name="opr_complication_rate" class="oe_inline"/>
+                                    <field name="antibiotics_prevent_rate" class="oe_inline"/>
+                                    <field name="inblood_cure_case" class="oe_inline"/>
+                                    <field name="unblood_cure_case" class="oe_inline"/>
+                                    <field name="internal_medicine_case" class="oe_inline"/>
+                                    <field name="sjjr_case" class="oe_inline"/>
+                                    <field name="opr_complication_rate2" class="oe_inline"/>
+                                    <field name="inhos_infect_rate" class="oe_inline"/>
+                                    <field name="accord_diag_rate" class="oe_inline"/>
+                                    <field name="outhos_cure_case" class="oe_inline"/>
+                                    <field name="outhos_better_case" class="oe_inline"/>
+                                    <field name="outhos_uncure_case" class="oe_inline"/>
+                                    <field name="outhos_death_case" class="oe_inline"/>
+                                    <field name="outhos_other_case" class="oe_inline"/>
+                                    <field name="outhos_better_rate" class="oe_inline"/>
 
+                                </group>
+                            </page>
+                            <page string="手术并发症">
+                                <group>
+                                    <field name="hematoma_case" class="oe_inline"/>
+                                    <field name="fa_case" class="oe_inline"/>
+                                    <field name="vf_case" class="oe_inline"/>
+                                    <field name="vw_tear_case" class="oe_inline"/>
+                                    <field name="opr_infect_case" class="oe_inline"/>
+                                    <field name="em_case" class="oe_inline"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
         <!-- 表格视图 -->
         <record id="view_mqc_pacs_tree" model="ir.ui.view">
             <field name="name">mqc.pacs.tree</field>
@@ -62,6 +120,7 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="year_month"/>
+                    <field name="units_name"/>
                     <field name="create_uid" />
                     <field name="create_date" />
                     <field name="intervene_id" />

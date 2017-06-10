@@ -54,6 +54,7 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="year_month" />
+                    <field name="units_name"/>
                     <field name="create_uid" />
                     <field name="create_date" />
                     <field name="nurse_detail" />

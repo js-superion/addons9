@@ -35,6 +35,7 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="year_month"/>
+                    <field name="units_name"/>
                     <field name="field1" class="oe_inline"/>
                     <field name="field2" class="oe_inline"/>
                     <field name="field3" class="oe_inline"/>

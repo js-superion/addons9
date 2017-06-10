@@ -338,7 +338,7 @@
             <field name="model_id" ref="model_mqc_pacs"/>
             <!--<field name="groups" eval="[(4, ref('group_mqc_merg_user'))]"/>-->
             <field name="global" eval="True"/>
-            <field name="domain_force">[('mqc_id.company_id', '=', user.company_id.id)]</field>
+             <field name="domain_force">[('company_id','child_of',[user.company_id.id])]</field>
         </record>
 
 
@@ -368,7 +368,7 @@
         <record id="rule_mqc_approval" model="ir.rule">
             <field name="name">mqc规则:查看补报审批数据</field>
             <field name="model_id" ref="model_mqc_dept_approval"/>
-            <field name="domain_force">[('create_uid', '=', user.id)]</field>
+            <field name="domain_force">[('company_id','child_of',[user.company_id.id])]</field>
             <!--<field name="domain_force">[('company_id','child_of',[user.company_id.id])]</field>-->
         </record>
 

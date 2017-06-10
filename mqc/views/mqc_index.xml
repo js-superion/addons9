@@ -98,6 +98,7 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="year_month"/>
+                    <field name="units_name"/>
                     <field name="outpat_capacity"/>
                     <field name="discharged_case"/>
                     <field name="accord_diag_case"/>

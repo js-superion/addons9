@@ -118,6 +118,7 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="year_month"/>
+                    <field name="units_name"/>
                     <field name="outp_case"/>
                     <field name="mr_acpt_rate"/>
                     <field name="presc_acpt_rate"/>
