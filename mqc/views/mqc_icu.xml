@@ -10,7 +10,7 @@
 
 
         <!-- icu form -->
-        <record id="view_emrg_form" model="ir.ui.view">
+        <record id="view_mqc_icu_form" model="ir.ui.view">
             <field name="name">mqc.icu.form</field>
             <field name="model">mqc.icu</field>
             <field name="arch" type="xml">

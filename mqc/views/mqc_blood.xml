@@ -143,8 +143,8 @@
                                     <field name="shortage_device" class="oe_inline"/>
                                     <field name="detail_ids" class="oe_inline">
                                         <tree string="检测技术填写" editable="bottom">
-                                            <field name="tech_id"  options="{'no_create': True, 'no_open': True}"/>
-                                            <field name="opr_method"/>
+                                            <field name="tech_id" options="{'no_create': True, 'no_open': True}"/>
+                                            <field name="method_id" options="{'no_create': True, 'no_open': True}"/>
                                             <field name="cases"/>
                                             <field name="indoor_qc_freq"/>
                                             <field name="province_eqa"/>
@@ -215,7 +215,7 @@
                                     <field name="detail_ids" class="oe_inline">
                                         <tree string="血液成分质量明细" editable="bottom">
                                             <field name="component_id" options="{'no_create': True, 'no_open': True}"/>
-                                            <field name="qlty_des"/>
+                                            <field name="issue_id" options="{'no_create': True, 'no_open': True}"/>
                                             <field name="bld_bag_no"/>
                                             <field name="bld_spec"/>
                                         </tree>

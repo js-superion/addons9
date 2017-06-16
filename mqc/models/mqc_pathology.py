@@ -26,7 +26,7 @@ class Pathology(models.Model):
     frozen_section_case = fields.Integer(u'冰冻切片例数', )
     elivision_case = fields.Integer(u'免疫组化例数', )
     fish_case = fields.Integer(u'FISH检测例数', )
-    details = fields.One2many('mqc.pathology.detail', 'pathology_id', u'护理质控明细',copy=True)
+    details = fields.One2many('mqc.pathology.detail', 'pathology_id', u'病理质控明细', copy=True)
 
     @api.multi
     def unlink(self):

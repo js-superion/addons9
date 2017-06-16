@@ -27,6 +27,8 @@ access_mqc_blood_comp_user,name_mqc_blood_comp_user,model_mqc_blood_component,gr
 access_mqc_blood_quota_user,name_mqc_blood_quota_user,model_mqc_blood_quota,group_mqc_blood_user,1,1,1,1
 access_mqc_blood_react_user,name_mqc_blood_react_user,model_mqc_blood_react,group_mqc_blood_user,1,1,1,1
 access_mqc_blood_manage_react_user,name_mqc_blood_manage_react_user,model_mqc_blood_manage_react,group_mqc_blood_user,1,1,1,1
+access_mqc_blood_method_user,name_mqc_blood_method_user,model_mqc_blood_method,group_mqc_blood_admin,1,1,1,1
+access_mqc_blood_issues_user,name_mqc_blood_issues_user,model_mqc_blood_issues,group_mqc_blood_admin,1,1,1,1
 
 
 
@@ -90,6 +92,8 @@ access_mqc_child_detail_admin,name_mqc_child_detail_admin,model_mqc_child_detail
 access_mqc_disease_user,name_mqc_child_disease_user,model_mqc_disease,group_mqc_child_user,1,1,1,1
 
 access_mqc_drug_user,name_mqc_drug_user,model_mqc_drug,group_mqc_drug_user,1,1,1,1
+access_mqc_drug_new_user,name_mqc_drug_new_user,model_mqc_drug_new,group_mqc_drug_new_user,1,1,1,1
+
 access_mqc_approval_user,name_mqc_approval_user,model_mqc_dept_approval,group_mqc_approval_user,1,1,1,1
 access_mqc_dept_type_user,name_mqc_dept_type_user,model_mqc_dept_type,group_mqc_dept_type,1,1,1,1
 

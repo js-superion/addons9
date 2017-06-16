@@ -93,7 +93,7 @@
                         </td>
                         <td width="228" colspan="2" valign="top">
                             <p align="center">
-                                本月用血量
+                                本月用血量(u)
                             </p>
                         </td>
                         <td width="216" colspan="3" valign="top">
@@ -209,7 +209,7 @@
                         </td>
                         <td width="228" colspan="2" valign="top">
                             <p align="center">
-                                自体输血量（U）
+                                自体输血量（ml）
                             </p>
                         </td>
                         <td width="216" colspan="3" valign="top">

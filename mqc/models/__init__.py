@@ -14,6 +14,7 @@ import mqc_pacs
 import util
 import mqc_mouth
 import mqc_drug
+import mqc_drug_new
 import mqc_child
 import mqc_lab
 import mqc_approval

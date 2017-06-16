@@ -169,6 +169,27 @@
         <field name="model">mqc.drug</field>
     </record>
 
+    <!-- 药事管理新 -->
+    <record id="action_mqc_drug_new_report" model="ir.actions.report.xml">
+        <field name="name">导出Excel(药事管理新)</field>
+        <field name="report_name">mqc.report_drug_new</field>
+        <field name="model">mqc.drug.new</field>    <!-- Report will appear on 'Print' menu for partners. -->
+        <field name="auto" eval="False"/>
+        <field name="is_pentaho_report" eval="True"/>
+        <field name="report_type">pentaho</field>
+        <field name="pentaho_report_model_id" ref="mqc.model_mqc_drug"/>
+        <field name="pentaho_report_output_type">xls</field>
+        <field name="pentaho_filename">mqc/report/drug_new.prpt</field>
+        <field name="pentaho_load_file" eval="True"/>
+    </record>
+    <record id="action_mqc_drug_report_values" model="ir.values">
+        <field name="name">药事管理导出设置新</field>
+        <field name="key2">client_action_multi</field>
+        <field name="value" eval="'ir.actions.report.xml,' +str(ref('action_mqc_drug_new_report'))"/>
+        <field name="key">action</field>
+        <field name="model">mqc.drug.new</field>
+    </record>
+
     <!--急诊 -->
     <record id="action_mqc_emergency_report" model="ir.actions.report.xml">
         <field name="name">导出Excel(急诊)</field>

@@ -10,6 +10,8 @@
             <menuitem id="menu_act_mqc_emrg" name="急诊与重症" string="急诊质控数据" parent="menu_mqc_form" action="action_mqc_emerg" groups="group_mqc_emerg_user" />
             <menuitem id="menu_act_mqc_pathology" name="病理" string="病理质控数据" parent="menu_mqc_form" action="action_mqc_pathology" groups="group_mqc_pathology_user"/>
             <menuitem id="menu_act_mqc_drug" name="药事管理" string="药事管理质控数据" parent="menu_mqc_form" action="action_mqc_drug" groups="group_mqc_drug_user"/>
+        <menuitem id="menu_act_mqc_drug_new" name="药事管理(新)" string="药事管理质控数据" parent="menu_mqc_form"
+                  action="action_mqc_drug_new" groups="group_mqc_drug_new_user"/>
             <menuitem id="menu_act_mqc_infect" name="院感" string="院感质控数据" parent="menu_mqc_form" action="action_mqc_infect" groups="group_mqc_infect_user"/>
             <menuitem id="menu_act_mqc_dialysis" name="血透" string="血透质控数据" parent="menu_mqc_form" action="action_mqc_dialysis" groups="group_mqc_dialysis_user"/>
             <menuitem id="menu_act_mqc_icu" name="ICU"  string="ICU质控数据"  parent="menu_mqc_form" action="action_mqc_icu" groups="group_mqc_icu_user"/>
@@ -54,7 +56,12 @@
             <menuitem id="menu_mqc_blood_tech" name="输血检测技术" string="输血检测技术" parent="menu_mqc_cfg" action="action_mqc_blood_tech" groups="group_mqc_admin"/>
             <menuitem id="menu_mqc_blood_component" name="血液成分" string="血液成分" parent="menu_mqc_cfg" action="action_mqc_blood_component" groups="group_mqc_admin"/>
             <menuitem id="menu_mqc_blood_quota" name="输血管理指标" string="输血管理指标" parent="menu_mqc_cfg" action="action_mqc_blood_quota" groups="group_mqc_admin"/>
-            <menuitem id="menu_mqc_blood_react" name="输血不良反应" string="不良反应" parent="menu_mqc_cfg" action="action_mqc_blood_react" groups="group_mqc_admin"/>
+        <menuitem id="menu_mqc_blood_react" name="输血不良反应" string="输血不良反应" parent="menu_mqc_cfg"
+                  action="action_mqc_blood_react" groups="group_mqc_admin"/>
+        <menuitem id="menu_mqc_blood_method" name="输血操作方法" string="输血操作方法" parent="menu_mqc_cfg"
+                  action="action_mqc_blood_method" groups="group_mqc_admin"/>
+        <menuitem id="menu_mqc_blood_issues" name="血液质量问题模板" string="血液质量问题模板" parent="menu_mqc_cfg"
+                  action="action_mqc_blood_issues" groups="group_mqc_admin"/>
 
             <menuitem id="menu_mqc_infect_part" name="感染部位" string="感染部位" parent="menu_mqc_cfg" action="action_mqc_infect_part" groups="group_mqc_admin"/>
             <menuitem id="menu_mqc_infect_sample" name="标本" string="标本" parent="menu_mqc_cfg" action="action_mqc_infect_sample" groups="group_mqc_admin"/>

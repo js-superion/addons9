@@ -154,19 +154,46 @@ class BloodReact(models.Model):
     ]
 
 
+class BloodMethod(models.Model):
+    _name = "mqc.blood.method"
+    _description = u"输血操作方法"
+    name = fields.Char(u'名称', )
+    _sql_constraints = [
+        ('name_uniq',
+         'UNIQUE(name)',
+         u'名称不能重复'
+         )
+    ]
+
+
+class BloodIssues(models.Model):
+    _name = "mqc.blood.issues"
+    _description = u"血液质量问题模板"
+    name = fields.Char(u'名称', )
+    _sql_constraints = [
+        ('name_uniq',
+         'UNIQUE(name)',
+         u'名称不能重复'
+         )
+    ]
+
+
 class BloodConstructDetail(models.Model):
     _name = "mqc.blood.construct.detail"
     _description = u"输血科建设及检测技术明细"
     tech_id = fields.Many2one('mqc.blood.tech',u'输血科检测技术',required=True, )
+    method_id = fields.Many2one('mqc.blood.method', u'操作方法', required=False, )
     construct_id = fields.Many2one('mqc.blood.construct',u'主记录',required=True, )
     #关联技术字典
     tech_name = fields.Char(u'技术名称', related='tech_id.name', readonly=False, store=True, )
-    opr_method = fields.Char( u'操作方法',required=False,)
-
+    opr_method = fields.Char(u'方法名称', related='method_id.name', readonly=False, store=True, )
     cases = fields.Integer(u'例数', )
-    indoor_qc_freq = fields.Float(u'室内质控频率(%)', )
-    province_eqa = fields.Char(u'省室间质评结果', ) # eqa  = external quality assessment
-    country_eqa = fields.Char(u'国室间质评结果', )
+    # cases = fields.Selection([('1', u'1次/天'), ('2', u'1次/周 '), ('3', u'1次/月 '), ('9', u'其他 ')], u'例数' )
+    # fields.Selection([('01', u'齐全'), ('02', u'不齐全')], u'科室必需设备')
+    indoor_qc_freq = fields.Selection([('1', u'1次/天'), ('2', u'1次/周 '), ('3', u'1次/月 '), ('9', u'其他 ')],
+                                      u'室内质控频率')  # fields.Float(u'室内质控频率', )
+    province_eqa = fields.Selection([('1', u'合格'), ('2', u'不合格 ')], u'省室间质评结果')
+    country_eqa = fields.Selection([('1', u'合格'), ('2', u'不合格 ')], u'国室间质评结果')  # Char(u'国室间质评结果', )
 
 
 
@@ -230,9 +257,11 @@ class BloodQualityDetail(models.Model):
     _name = "mqc.blood.qlty.detail"
     _description = u"血液成分质量明细"
 
-    component_id = fields.Many2one('mqc.blood.component',u'血液成分',required=True, )
+    component_id = fields.Many2one('mqc.blood.component',u'血液成分', required=True, )
+    issue_id = fields.Many2one('mqc.blood.issues', u'质量问题描述', required=False, )
     qlty_id = fields.Many2one('mqc.blood.qlty',u'主记录',required=True, ) #关联主记录
-    qlty_des = fields.Char(u'质量问题描述',)
+    qlty_des = fields.Char(u'问题描述', related='issue_id.name', readonly=False, store=True, )
+    # fields.Many2one('mqc.blood.method', u'操作方法', required=True, )
     bld_bag_no = fields.Char( u'血袋编码',)
     bld_spec = fields.Integer(u'血液规格', )
 

@@ -46,6 +46,7 @@
         'views/mqc_pacs.xml',
         'views/mqc_mouth.xml',
         'views/mqc_drug.xml',
+        'views/mqc_drug_new.xml',
         'views/mqc_cfg.xml',
         'views/mqc_cfg_blood.xml',
         'views/mqc_menuitem.xml',

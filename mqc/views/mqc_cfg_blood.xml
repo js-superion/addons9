@@ -134,5 +134,71 @@
             </field>
         </record>
 
+
+        <!--血液问题 -->
+        <record model="ir.actions.act_window" id="action_mqc_blood_issues">
+            <field name="name">血液质量问题模板</field>
+            <field name="res_model">mqc.blood.issues</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- 表单视图 -->
+        <record id="view_mqc_blood_issues_form" model="ir.ui.view">
+            <field name="name">mqc.blood.issues.form</field>
+            <field name="model">mqc.blood.issues</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name"></field>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <!-- 列表视图 -->
+        <record id="view_mqc_blood_issues_tree" model="ir.ui.view">
+            <field name="name">mqc.blood.issues.tree</field>
+            <field name="model">mqc.blood.issues</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"></field>
+                    <field name="create_uid"></field>
+                    <field name="create_date"></field>
+                </tree>
+
+            </field>
+        </record>
+
+        <!--操作方法 -->
+        <record model="ir.actions.act_window" id="action_mqc_blood_method">
+            <field name="name">输血操作方法</field>
+            <field name="res_model">mqc.blood.method</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- 表单视图 -->
+        <record id="view_mqc_blood_method_form" model="ir.ui.view">
+            <field name="name">mqc.blood.method.form</field>
+            <field name="model">mqc.blood.method</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name"></field>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <!-- 列表视图 -->
+        <record id="view_mqc_blood_method_tree" model="ir.ui.view">
+            <field name="name">mqc.blood.method.tree</field>
+            <field name="model">mqc.blood.method</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"></field>
+                    <field name="create_uid"></field>
+                    <field name="create_date"></field>
+                </tree>
+
+            </field>
+        </record>
     </data>
 </odoo>

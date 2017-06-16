@@ -10,7 +10,7 @@
 
 
         <!-- lab form -->
-        <record id="view_emrg_form" model="ir.ui.view">
+        <record id="view_mqc_lab_form" model="ir.ui.view">
             <field name="name">mqc.lab.form</field>
             <field name="model">mqc.lab</field>
             <field name="arch" type="xml">

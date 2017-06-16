@@ -148,6 +148,12 @@
             <field name="implied_ids" eval="[(4,ref('base.group_user'))]"/>
         </record>
 
+        <record id="group_mqc_drug_new_user" model="res.groups">
+            <field name="name">药事管理用户组（新）</field>
+            <field name="category_id" ref="base.module_category_mqc"/>
+            <field name="implied_ids" eval="[(4,ref('base.group_user'))]"/>
+        </record>
+
         <record id="group_mqc_lab_user" model="res.groups">
             <field name="name">检验组</field>
             <field name="category_id" ref="base.module_category_mqc"/>
@@ -278,6 +284,16 @@
             <!--<field name="domain_force">[('mqc_id.company_id', '=', user.company_id.id)]</field>-->
             <field name="domain_force">[('company_id','child_of',[user.company_id.id])]</field>
         </record>
+
+        <record id="rule_mqc_drug_new" model="ir.rule">
+            <field name="name">mqc规则:查看药事数据（新）</field>
+            <field name="model_id" ref="model_mqc_drug_new"/>
+            <!--<field name="groups" eval="[(4, ref('group_mqc_merg_user'))]"/>-->
+            <field name="global" eval="True"/>
+            <!--<field name="domain_force">[('mqc_id.company_id', '=', user.company_id.id)]</field>-->
+            <field name="domain_force">[('company_id','child_of',[user.company_id.id])]</field>
+        </record>
+
 
         <record id="rule_mqc_icu" model="ir.rule">
             <field name="name">mqc规则:查看ICU数据</field>

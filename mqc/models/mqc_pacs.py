@@ -17,8 +17,8 @@ class Pacs(models.Model):
     year_month = fields.Char(u'年月', default=lambda self: self.env['utils']._default_last_month())
     _rec_name = 'year_month'
     #介入放射指标
-    intervene_id = fields.Many2one('mqc.pacs.intervene', u'介入放射', required=True,ondelete='cascade')
-    details = fields.One2many('mqc.pacs.detail', 'pacs_id', u'影像质控明细',copy=True)
+    # intervene_id = fields.Many2one('mqc.pacs.intervene', u'介入放射', required=True,ondelete='cascade')
+    details = fields.One2many('mqc.pacs.detail', 'pacs_id', u'指标', copy=True)
 
     @api.multi
     def unlink(self):
@@ -94,25 +94,52 @@ class PacsDetail(models.Model):
     pacs_id = fields.Many2one('mqc.pacs',u'医学影像主记录', required=True,)
     device_id = fields.Many2one('mqc.pacs.device',u'影像设备')
 
-    #诊断部分
+    # 影像工作量指标
     outp_exam_case = fields.Integer(u'门诊检查人数', )
     outp_total = fields.Integer(u'门诊总量', )
     inp_exam_case = fields.Integer(u'住院检查人数', )
     adm_exam_case = fields.Integer(u'住院总量', )
-    inp_accord_diag = fields.Integer(u'入院诊断符合数', )
-    outp_accord_diag = fields.Integer(u'出院诊断符合数', )
-    cns_exam_case = fields.Integer(u'中枢神经系统检查人数', ) #central nervous system
 
-    bone_exam_case = fields.Integer(u'骨骼/关节检查人数', )
-    urinary_genital_case = fields.Integer(u'泌尿/生殖系统检查人数', ) #urinary泌尿，genital 生殖
-    breath_exam_case = fields.Integer(u'呼吸系统检查人数', )
+    # 影像检查阳性率
+    zjcrc = fields.Integer(u'总检查人次', )
+    jcyxrs = fields.Integer(u'检查阳性人数', )
+    jcyxxl = fields.Integer(u'检查阳性率', )
 
-    digestive_case = fields.Integer(u'消化系统检查人数', ) #digestive 消化
-    diag_error_case = fields.Integer(u'影像诊断误/漏诊数', )
-    infect_report_case = fields.Integer(u'传染病报告人数', )
-    critical_value_case = fields.Integer(u'危急值报告人数', )
-    crc_case = fields.Integer(u'结直肠癌病例数', ) #colorectal cancer (CRC)
-    contrast_agent_reaction = fields.Integer(u'对比剂不良反应', )
-    positive_rate = fields.Float(u'检查阳性率(%)', )
-    finish_case = fields.Integer(u'功能成像完成人数', )
-    enhance_rate = fields.Float(u'增强率(%)', )
+    # 影像检查项目
+    zqjcrs = fields.Integer(u'增强检查人数', )
+    zqjczb = fields.Integer(u'增强检查占比', )
+    tscxjsrc = fields.Integer(u'特殊成像技术人次', )
+    tscxjszb = fields.Integer(u'特殊成像技术占比', )
+
+    # 影像检查质量指标
+    ccls = fields.Integer(u'抽查例数', )
+    yjpls = fields.Integer(u'一级片例数', )
+    yjpl = fields.Integer(u'一级片率', )
+    # 影像报告质量指标
+    pgls = fields.Integer(u'评估例数', )
+    hege = fields.Integer(u'合格', )
+    hgl = fields.Integer(u'合格率', )
+
+    # 随访病例诊断符合率
+    sfls = fields.Integer(u'随访例数', )
+    dwzdzqs = fields.Integer(u'定位诊断准确数', )
+    dwzdzql = fields.Integer(u'定位诊断准确率', )
+    dxzdzqs = fields.Integer(u'定性诊断准确数', )
+    dxzdzql = fields.Integer(u'定性诊断准确率', )
+
+    # 影像科工作效率指标
+    jzbgcyjcls = fields.Integer(u'急诊报告抽样检查例数', )
+    jzbgjswcl = fields.Integer(u'急诊报告及时完成率', )
+    mzbgccls = fields.Integer(u'门诊报告抽查例数', )
+    mzbgjswcl = fields.Integer(u'门诊报告及时完成率', )
+    zybgccls = fields.Integer(u'住院报告抽查例数', )
+    zybgjswcl = fields.Integer(u'住院报告及时完成率', )
+    # 对比剂不良反应指标
+    qd = fields.Integer(u'轻度', )
+    zd = fields.Integer(u'中度', )
+    zhongdu = fields.Integer(u'重度', )
+
+    # 影像科服务质量指标
+    mzjcrs = fields.Integer(u'门诊检查人数', )
+    brtscs = fields.Integer(u'病人投诉次数', )
+    dsfdcmyd = fields.Integer(u'第三方调查满意度', )

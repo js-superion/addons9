@@ -20,29 +20,53 @@
                             <page string="影像数据填报">
                                 <group>
                                     <field name="year_month"  class="oe_inline" attrs="{'readonly': True}" string="上报月份"/>
-                                    <field name="intervene_id"/>
+                                    <!--<field name="intervene_id"/>-->
                                     <field name="details">
-                                        <tree string="介入放射指标" editable="bottom">
+                                        <tree string="指标" editable="bottom">
                                             <field name="device_id" options="{'no_create': True, 'no_open': True}"/>
                                             <field name="outp_exam_case"/>
                                             <field name="outp_total"/>
                                             <field name="inp_exam_case"/>
                                             <field name="adm_exam_case"/>
-                                            <field name="inp_accord_diag"/>
-                                            <field name="outp_accord_diag"/>
-                                            <field name="cns_exam_case"/>
-                                            <field name="bone_exam_case"/>
-                                            <field name="urinary_genital_case"/>
-                                            <field name="breath_exam_case"/>
-                                            <field name="digestive_case"/>
-                                            <field name="diag_error_case"/>
-                                            <field name="infect_report_case"/>
-                                            <field name="critical_value_case"/>
-                                            <field name="crc_case"/>
-                                            <field name="contrast_agent_reaction"/>
-                                            <field name="positive_rate"/>
-                                            <field name="finish_case"/>
-                                            <field name="enhance_rate"/>
+
+                                            <field name="zjcrc"/>
+                                            <field name="jcyxrs"/>
+                                            <field name="jcyxxl"/>
+
+                                            <field name="zqjcrs"/>
+                                            <field name="zqjczb"/>
+                                            <field name="tscxjsrc"/>
+                                            <field name="tscxjszb"/>
+
+                                            <field name="ccls"/>
+                                            <field name="yjpls"/>
+                                            <field name="yjpl"/>
+
+                                            <field name="pgls"/>
+                                            <field name="hege"/>
+                                            <field name="hgl"/>
+
+                                            <field name="sfls"/>
+                                            <field name="dwzdzqs"/>
+                                            <field name="dwzdzql"/>
+                                            <field name="dxzdzqs"/>
+                                            <field name="dxzdzql"/>
+
+                                            <field name="jzbgcyjcls"/>
+                                            <field name="jzbgjswcl"/>
+                                            <field name="mzbgccls"/>
+                                            <field name="mzbgjswcl"/>
+                                            <field name="zybgccls"/>
+                                            <field name="zybgjswcl"/>
+
+                                            <field name="qd"/>
+                                            <field name="zd"/>
+                                            <field name="zhongdu"/>
+
+                                            <field name="mzjcrs"/>
+                                            <field name="brtscs"/>
+                                            <field name="dsfdcmyd"/>
+
                                         </tree>
 
                                     </field>
@@ -123,7 +147,7 @@
                     <field name="units_name"/>
                     <field name="create_uid" />
                     <field name="create_date" />
-                    <field name="intervene_id" />
+                    <!--<field name="intervene_id" />-->
                 </tree>
 
             </field>
