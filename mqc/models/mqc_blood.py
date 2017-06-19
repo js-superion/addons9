@@ -183,7 +183,7 @@ class BloodConstructDetail(models.Model):
     _description = u"输血科建设及检测技术明细"
     tech_id = fields.Many2one('mqc.blood.tech',u'输血科检测技术',required=True, )
     method_id = fields.Many2one('mqc.blood.method', u'操作方法', required=False, )
-    construct_id = fields.Many2one('mqc.blood.construct',u'主记录',required=True, )
+    construct_id = fields.Many2one('mqc.blood.construct', u'主记录', required=True, ondelete='cascade')
     #关联技术字典
     tech_name = fields.Char(u'技术名称', related='tech_id.name', readonly=False, store=True, )
     opr_method = fields.Char(u'方法名称', related='method_id.name', readonly=False, store=True, )
@@ -259,7 +259,7 @@ class BloodQualityDetail(models.Model):
 
     component_id = fields.Many2one('mqc.blood.component',u'血液成分', required=True, )
     issue_id = fields.Many2one('mqc.blood.issues', u'质量问题描述', required=False, )
-    qlty_id = fields.Many2one('mqc.blood.qlty',u'主记录',required=True, ) #关联主记录
+    qlty_id = fields.Many2one('mqc.blood.qlty', u'主记录', required=True, ondelete='cascade')  # 关联主记录
     qlty_des = fields.Char(u'问题描述', related='issue_id.name', readonly=False, store=True, )
     # fields.Many2one('mqc.blood.method', u'操作方法', required=True, )
     bld_bag_no = fields.Char( u'血袋编码',)
@@ -303,8 +303,8 @@ class BloodManage(models.Model):
 class BloodManageReact(models.Model):
     _name = "mqc.blood.manage.react"
     _description = u"输血管理不良报告"
-    react_id = fields.Many2one('mqc.blood.react',u'不良反应',required=True, )
-    manage_id = fields.Many2one('mqc.blood.manage', u'主记录', required=True, )  # 关联主记录
+    react_id = fields.Many2one('mqc.blood.react', u'不良反应', required=True, )
+    manage_id = fields.Many2one('mqc.blood.manage', u'主记录', required=True, ondelete='cascade')  # 关联主记录
     cases = fields.Char( u'例数',)
 
 
@@ -312,7 +312,7 @@ class BloodManageDetail(models.Model):
     _name = "mqc.blood.manage.detail"
     _description = u"输血管理项目明细"
     quota_id = fields.Many2one('mqc.blood.quota',u'管理项目名称',required=True, )
-    manage_id = fields.Many2one('mqc.blood.manage',u'主记录',required=True, ) #关联主记录
+    manage_id = fields.Many2one('mqc.blood.manage', u'主记录', required=True, ondelete='cascade')  #关联主记录
     rate = fields.Float(u'百分率',)
     remark = fields.Char( u'备注',)
 

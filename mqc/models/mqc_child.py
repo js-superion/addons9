@@ -47,7 +47,7 @@ class ChildDetail(models.Model):
     _name = "mqc.child.detail"  # child 儿科
     _description = u"儿科质控明细"
     # 一般信息
-    child_id = fields.Many2one('mqc.child', u'儿科主记录', required=True,)
+    child_id = fields.Many2one('mqc.child', u'儿科主记录', required=True, ondelete='cascade')
     disease_name = fields.Many2one('mqc.disease',u'病种名称',required=True,)
     outp_case = fields.Float(u'门诊病人数')
     adm_case = fields.Float(u'住院病人数')
