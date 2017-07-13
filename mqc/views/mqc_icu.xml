@@ -61,6 +61,12 @@
                     <field name="dvt_prevent" />
                     <field name="mortality" />
                     <field name="predict_mortality" />
+                    <field name="std_mortality"/>
+                    <field name="unplanned_extubation"/>
+                    <field name="intubation_within48h"/>
+                    <field name="vpa_rate"/>
+                    <field name="crbsi_rate"/>
+                    <field name="cauti_rate"/>
                 </tree>
 
             </field>

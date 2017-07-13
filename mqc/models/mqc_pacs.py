@@ -91,7 +91,7 @@ class PacsDevice(models.Model):
 class PacsDetail(models.Model):
     _name = 'mqc.pacs.detail'
     _description = u'医学影像指标明细（CT,MRI,普放）'
-    pacs_id = fields.Many2one('mqc.pacs',u'医学影像主记录', required=True,)
+    pacs_id = fields.Many2one('mqc.pacs', u'医学影像主记录', required=True, ondelete='cascade')
     device_id = fields.Many2one('mqc.pacs.device',u'影像设备')
 
     # 影像工作量指标
@@ -103,37 +103,37 @@ class PacsDetail(models.Model):
     # 影像检查阳性率
     zjcrc = fields.Integer(u'总检查人次', )
     jcyxrs = fields.Integer(u'检查阳性人数', )
-    jcyxxl = fields.Integer(u'检查阳性率', )
+    jcyxxl = fields.Float(u'检查阳性率', )
 
     # 影像检查项目
     zqjcrs = fields.Integer(u'增强检查人数', )
-    zqjczb = fields.Integer(u'增强检查占比', )
+    zqjczb = fields.Float(u'增强检查占比', )
     tscxjsrc = fields.Integer(u'特殊成像技术人次', )
-    tscxjszb = fields.Integer(u'特殊成像技术占比', )
+    tscxjszb = fields.Float(u'特殊成像技术占比', )
 
     # 影像检查质量指标
     ccls = fields.Integer(u'抽查例数', )
     yjpls = fields.Integer(u'一级片例数', )
-    yjpl = fields.Integer(u'一级片率', )
+    yjpl = fields.Float(u'一级片率', )
     # 影像报告质量指标
     pgls = fields.Integer(u'评估例数', )
     hege = fields.Integer(u'合格', )
-    hgl = fields.Integer(u'合格率', )
+    hgl = fields.Float(u'合格率', )
 
     # 随访病例诊断符合率
     sfls = fields.Integer(u'随访例数', )
     dwzdzqs = fields.Integer(u'定位诊断准确数', )
-    dwzdzql = fields.Integer(u'定位诊断准确率', )
+    dwzdzql = fields.Float(u'定位诊断准确率', )
     dxzdzqs = fields.Integer(u'定性诊断准确数', )
-    dxzdzql = fields.Integer(u'定性诊断准确率', )
+    dxzdzql = fields.Float(u'定性诊断准确率', )
 
     # 影像科工作效率指标
     jzbgcyjcls = fields.Integer(u'急诊报告抽样检查例数', )
-    jzbgjswcl = fields.Integer(u'急诊报告及时完成率', )
+    jzbgjswcl = fields.Float(u'急诊报告及时完成率', )
     mzbgccls = fields.Integer(u'门诊报告抽查例数', )
-    mzbgjswcl = fields.Integer(u'门诊报告及时完成率', )
+    mzbgjswcl = fields.Float(u'门诊报告及时完成率', )
     zybgccls = fields.Integer(u'住院报告抽查例数', )
-    zybgjswcl = fields.Integer(u'住院报告及时完成率', )
+    zybgjswcl = fields.Float(u'住院报告及时完成率', )
     # 对比剂不良反应指标
     qd = fields.Integer(u'轻度', )
     zd = fields.Integer(u'中度', )

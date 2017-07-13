@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from openerp import models, fields, api
+from openerp import models, fields, api, _
 
 
 class BloodClinic(models.Model):
@@ -74,6 +74,13 @@ class BloodClinic(models.Model):
          'UNIQUE (year_month,units_name,dept_name)',
          u'本月只能上报一次数据')
     ]
+
+    @api.multi
+    def copy(self, default=None):
+        self.ensure_one()
+        default = default or {}
+        default['year_month'] = self.env['utils']._default_last_month()
+        return super(BloodClinic, self).copy(default)
 
 
 class Blood(models.Model):
@@ -216,7 +223,19 @@ class BloodConstruct(models.Model):
     bed_num = fields.Integer( u'医院床位数',)
     required_device  = fields.Selection([('01', u'齐全'), ('02', u'不齐全')], u'科室必需设备')
     shortage_device = fields.Char(u'缺少的设备名称',)
-    detail_ids = fields.One2many('mqc.blood.construct.detail', 'construct_id', u'技术明细',copy=True)
+
+    detail_ids = fields.One2many('mqc.blood.construct.detail', 'construct_id', u'技术明细', copy=True)
+
+    @api.multi
+    def copy(self, default=None):
+        self.ensure_one()
+        default = default or {}
+        default['year_month'] = self.env['utils']._default_last_month()
+        return super(BloodConstruct, self).copy(default)
+
+
+
+
 
 #表3 血液成分质量反馈月报表
 class BloodQuality(models.Model):
@@ -234,6 +253,13 @@ class BloodQuality(models.Model):
                             default=lambda self: self.env.user.employee_ids.department_id.name, )
 
     detail_ids = fields.One2many('mqc.blood.qlty.detail', 'qlty_id', u'质量明细',copy=True) #关联明细
+
+    @api.multi
+    def copy(self, default=None):
+        self.ensure_one()
+        default = default or {}
+        default['year_month'] = self.env['utils']._default_last_month()
+        return super(BloodQuality, self).copy(default)
 
     @api.multi
     @api.depends('year_month', 'units_name')
@@ -292,6 +318,12 @@ class BloodManage(models.Model):
             result.append((qlty.id, name))
         return result
 
+    @api.multi
+    def copy(self, default=None):
+        self.ensure_one()
+        default = default or {}
+        default['year_month'] = self.env['utils']._default_last_month()
+        return super(BloodManage, self).copy(default)
     # 正式启用要开启
     # _sql_constraints = [
     #     ('unit_dept_month_uniq',
@@ -341,3 +373,9 @@ class BloodAdvise(models.Model):
             result.append((qlty.id, name))
         return result
 
+    @api.multi
+    def copy(self, default=None):
+        self.ensure_one()
+        default = default or {}
+        default['year_month'] = self.env['utils']._default_last_month()
+        return super(BloodAdvise, self).copy(default)
